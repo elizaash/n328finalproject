@@ -1,4 +1,4 @@
-
+//Chart 1
 
 //hover labels for manufacturers
 var full_name = {"K":"Kelloggs", "A":"American Home Food Products.", "N":"Nabisco", "G":"General Mills", "P":"Post", "Q":"Quaker Oats", "R":"Ralston Purina"}; 
