@@ -1,7 +1,7 @@
 
 
-
-var full_name = {"M":"Moon", "A":"Apple", "F":"Fish", "G":"Goat"}; 
+//hover labels for manufacturers
+var full_name = {"K":"Kelloggs", "A":"American Home Food Products.", "N":"Nabisco", "G":"General Mills", "P":"Post", "Q":"Quaker Oats", "R":"Ralston Purina"}; 
 // set the dimensions and margins of the graph
 var margin = {top: 30, right: 30, bottom: 70, left: 60},
     width = window.innerWidth/2 - margin.left - margin.right,
@@ -22,7 +22,7 @@ var svg = d3.select("#my_dataviz")
     var tool_tip = d3.tip()
       .attr("class", "d3-tip")
       .offset([-8, 0])
-      .html(function(d) { return "MFR: " + full_name[d.manufacturer_name] + " Total Sugars found in Cereals " + d.sugars; });
+      .html(function(d) { return "Manufacturer- " + full_name[d.manufacturer_name] + ";" + " Total Sugar = " + d.sugars + "gm"; });
     svg.call(tool_tip);
     
 // Initialize the X axis
@@ -40,7 +40,7 @@ var yAxis = svg.append("g")
 
 var xLabel = svg.append("text")
             .attr("x","50%")
-            .attr("y", height+margin.bottom)
+            .attr("y", height+margin.bottom - 30)
             .attr("fill","black")
             .attr("stroke","black")
             .text("Manufacturers"); 
@@ -94,7 +94,7 @@ function update() {
         .attr("y", function(d) { return y(d.sugars); })
         .attr("width", x.bandwidth())
         .attr("height", function(d) { return height - y(d.sugars); })
-        .attr("fill", "#69b3a2")
+        .attr("fill", "#5b8ba1")
     
   })
 
